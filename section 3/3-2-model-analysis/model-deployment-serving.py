@@ -7,4 +7,6 @@ show(0, 'The model thought this was a {} (class {}), and it was actually a {} (c
   class_names[np.argmax(predictions[0])], np.argmax(predictions[0]), class_names[test_labels[0]], test_labels[0]))
 
 
+
+
 # docker run -p 8501:8501 --mount type=bind,source=C:\TF_serving\tf_model,target=/models/mnist/ -e MODEL_NAME=mnist -t tensorflow/serving 
