@@ -2,6 +2,8 @@ from typing import NamedTuple
 
 import kfp
 from kfp import dsl
+import kfp.dsl as dsl
+
 from kfp.components import func_to_container_op, InputPath, OutputPath
 
 
@@ -12,12 +14,13 @@ def add(a: float, b: float) -> float:
   return a + b
 
 
+MY_BUCKET = "gs://my-pipeline-root/example-pipeline"
 
-import kfp.dsl as dsl
+
 @dsl.pipeline(
   name='addition-pipeline',
   description='An example pipeline that performs addition calculations.',
-  pipeline_root='gs://my-pipeline-root/example-pipeline'
+  pipeline_root=MY_BUCKET
 )
 
 def add_pipeline(
@@ -78,7 +81,7 @@ def my_divmod(
         ['quotient', 'remainder'])
     return divmod_output(quotient, remainder)
 
-
+### 3
 import kfp.dsl as dsl
 @dsl.pipeline(
    name='calculation-pipeline',
