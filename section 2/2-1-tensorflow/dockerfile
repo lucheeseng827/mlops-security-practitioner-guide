@@ -3,3 +3,4 @@ FROM tensorflow/python
 COPY . /app
 
 CMD [ "python main.py"]
+
