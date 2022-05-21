@@ -1,3 +1,5 @@
 FROM tensorflow/python
 
-COPY
+COPY . /app
+
+CMD [ "python main.py"]
